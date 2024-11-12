@@ -1,17 +1,23 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QWidget, QInputDialog, QMainWindow
+from PyQt6.QtWidgets import QApplication, QWidget, QInputDialog, QMainWindow, QDialog
 from music_test import music_player
-from register import reg
+import register
+import sqlite3
+import io
+import os
 
 
-class Main(QMainWindow):
+template_reg = ''''''
+
+
+class Main(QMainWindow, QDialog):
     def __init__(self):
         super().__init__()
         self.initUI()
 
     def initUI(self):
         bd = 0
-        reg(self, bd)
+        os.system("python register.py")
 
 
 if __name__ == '__main__':
