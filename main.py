@@ -16,8 +16,15 @@ class Main(QMainWindow, QDialog):
         self.initUI()
 
     def initUI(self):
-        bd = 0
-        os.system("python register.py")
+        bd = sqlite3.connect('user.db')
+        cur = bd.cursor()
+        query = """ INSERT INTO user (password, name) VALUES('1', 'what') """
+        cur.execute(query)
+        bd.commit()
+        bd.close()
+
+        print(os.system("python register.py"))
+
 
 
 if __name__ == '__main__':

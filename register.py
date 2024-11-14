@@ -99,7 +99,6 @@ class Pseudonym(QDialog):
                         check = True
                         break
                     if ok is False:
-                        print('fff')
                         break
                 break
             if ok is False:
